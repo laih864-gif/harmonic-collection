@@ -32,6 +32,36 @@ h1 {
 }
 
 
+.camera {
+  position: relative;
+  display: inline-block;
+}
+
+.camera img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px; 
+  height: auto;
+}
+
+.camera1 {
+  display: block;
+}
+
+.camera2 {
+  display: none;
+}
+
+.camera:hover .camera1 {
+  display: none;
+}
+
+.camera:hover .camera2 {
+  display: block;
+}
+
+
 h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
