@@ -10,11 +10,10 @@ body {
 }
 
 body {
-  background-color: #F5EFE6; 
-  background-image: url("grain.png");
-  background-repeat: no-repeat;  
-  background-size: cover; 
-  background-position: center;
+  background-color: #F5EFE6;
+  background-image: 
+    radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 2px 2px; 
 }
 
 main {
