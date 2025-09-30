@@ -1,0 +1,41 @@
+.container-1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.blue {
+  background-color: rgb(148, 216, 240);
+  height: 700px;
+  width: 700px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.gray {
+  background-color: rgb(193, 193, 193);
+  height: 570px;
+  width: 570px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.white {
+  background-color: rgb(255, 255, 255);
+  height: 450px;
+  width: 450px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.yellow {
+  background-color: rgb(251, 234, 44);
+  height: 270px;
+  width: 270px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}

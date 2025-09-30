@@ -1,0 +1,53 @@
+body {
+  background-color: #F5EFE6;   
+  color: #2C3E50;
+  font-family: "Lato", sans-serif; 
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("grain.png") repeat;
+  background-size: 150px 150px;
+  opacity: 0.45;  
+  pointer-events: none; 
+}
+
+main {
+  max-width: 800px;
+}
+
+
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #2C3E50;
+  margin-bottom: 1.5rem;
+}
+
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #2C3E50;
+  margin: 2.5rem 0 1rem;
+}
+
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #2C3E50;
+  margin-bottom: 1.2rem;
+}
