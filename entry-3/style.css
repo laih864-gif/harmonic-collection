@@ -10,11 +10,30 @@ body {
 }
 
 body {
-  background-color: #F5EFE6;   
-  background-image: url("grain1.png");
-  background-repeat: repeat;      
-  background-size: 320px 320px;    
-  background-position: center;
+  background-color: #F5EFE6; 
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("grain1.png"); /* 你的grain图片 */
+  background-repeat: repeat;          /* 平铺 */
+  background-size: 320px 320px;       /* 可以改大一点，颗粒更稀疏 */
+  opacity: 0.15;                      /* 调整透明度 0~1 */
+  pointer-events: none;               /* 不挡住鼠标操作 */
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;  /* 保证内容在grain上方 */
 }
 
 main {
