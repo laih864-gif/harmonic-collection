@@ -10,10 +10,11 @@ body {
 }
 
 body {
-  background-color: #F5EFE6;
-  background-image: 
-    radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 2px 2px; 
+  background-color: #F5EFE6;   
+  background-image: url("grain1.png");
+  background-repeat: repeat;      
+  background-size: 320px 320px;    
+  background-position: center;
 }
 
 main {
@@ -33,10 +34,14 @@ h1 {
 
 .camera {
   position: relative;
-  display: inline-block;
-  width: 350px;
-  height: 250px;  /* 占据空间，避免遮挡正文 */
-  margin: 0 auto 2rem;  /* 居中 + 与正文留间距 */
+  display: block;  
+  width: 300px;         
+  margin: 0 auto 2rem;    
+}
+
+.camera img {
+  max-width: 100%;    
+  height: auto;     
 }
 
 .camera1 {
@@ -63,6 +68,7 @@ h2 {
   font-size: 1.6rem;
   color: #2C3E50;
   margin: 2.5rem 0 1rem;
+  text-align: center;    
 }
 
 
