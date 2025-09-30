@@ -35,14 +35,9 @@ h1 {
 .camera {
   position: relative;
   display: inline-block;
-}
-
-.camera img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 350px; 
-  height: auto;
+  width: 350px;
+  height: 250px;  /* 占据空间，避免遮挡正文 */
+  margin: 0 auto 2rem;  /* 居中 + 与正文留间距 */
 }
 
 .camera1 {
