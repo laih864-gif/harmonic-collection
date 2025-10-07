@@ -1,0 +1,76 @@
+body {
+  background-color: #F9F4E7;   /* 温暖米色 */
+  color: #3C2F2F;              /* 深棕色文字 */
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+body {
+background-image: 
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
+  background-blend-mode: multiply;
+}
+main {
+  max-width: 800px;
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #3C2F2F;
+  margin-bottom: 1.5rem;
+}
+
+/* 信封 hover 效果 */
+.envelope {
+  position: relative;
+  display: block;
+  width: 300px;
+  margin: 0 auto 2rem;
+}
+
+.envelope img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.envelope2 {
+  display: none;
+}
+
+.envelope:hover .envelope1 {
+  display: none;
+}
+
+.envelope:hover .envelope2 {
+  display: block;
+}
+
+/* 副标题 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3C2F2F;
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+}
+
+/* 正文 */
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #3C2F2F;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
