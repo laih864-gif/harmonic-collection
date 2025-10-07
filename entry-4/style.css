@@ -1,6 +1,6 @@
 body {
-  background-color: #F9F4E7;   /* 温暖米色 */
-  color: #3C2F2F;              /* 深棕色文字 */
+  background-color: #F9F4E7;
+  color: #3C2F2F;
   font-family: "Lato", sans-serif;
   line-height: 1.75;
   margin: 0;
@@ -8,14 +8,24 @@ body {
   display: flex;
   justify-content: center;
 }
-body {
-background-image: 
+
+/* 纸感/颗粒（可留可去；想更轻可把 opacity 调到 0.08~0.12） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
     radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
     radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
   background-size: 3px 3px, 4px 4px;
   background-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
+
 main {
+  position: relative;
+  z-index: 1;         /* 保证内容在纹理之上 */
   max-width: 800px;
 }
 
@@ -29,31 +39,21 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* 信封 hover 效果 */
+/* 信封 hover 切换（延续 entry3 的交互写法） */
 .envelope {
   position: relative;
   display: block;
-  width: 300px;
+  width: 300px;       /* 需要更大/更小可改 280/320 */
   margin: 0 auto 2rem;
 }
-
 .envelope img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-.envelope2 {
-  display: none;
-}
-
-.envelope:hover .envelope1 {
-  display: none;
-}
-
-.envelope:hover .envelope2 {
-  display: block;
-}
+.envelope2 { display: none; }
+.envelope:hover .envelope1 { display: none; }
+.envelope:hover .envelope2 { display: block; }
 
 /* 副标题 */
 h2 {
@@ -68,7 +68,6 @@ h2 {
 
 /* 正文 */
 p {
-  font-family: "Lato", sans-serif;
   font-size: 1.05rem;
   color: #3C2F2F;
   margin-bottom: 1.2rem;
