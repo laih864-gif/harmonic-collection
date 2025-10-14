@@ -1,0 +1,72 @@
+body {
+  background-color: #FAF4F0;   /* 柔和奶粉色背景 */
+  color: #5C4B45;              /* 暖灰棕文字 */
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 背景粒子层（淡淡质感） */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("grain1.png");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  opacity: 0.08;          /* 稀疏轻盈的颗粒感 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #5C4B45;
+  margin-bottom: 1.5rem;
+}
+
+
+/* 副标题与正文 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #5C4B45;
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #5C4B45;
+  margin-bottom: 1.2rem;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;   /* 与上下段落保持距离 */
+}
+
+iframe {
+  border-radius: 12px;              /* 视频圆角 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 轻微阴影 */
+}
