@@ -21,22 +21,8 @@ h1 {
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
-  color: #E8C29E;    /* 温暖金棕标题 */
+  color: #EAEAEA;
   margin-bottom: 2rem;
-}
-
-/* ====== Record Image ====== */
-.record {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.record-img {
-  width: 320px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 190, 140, 0.2);
 }
 
 /* ====== Subtitles ====== */
@@ -45,7 +31,7 @@ h2 {
   font-style: italic;
   font-weight: 400;
   font-size: 1.6rem;
-  color: #D8A47F;    /* 柔和铜橙色 */
+  color: #EAEAEA;
   text-align: center;
   margin: 2.5rem 0 1rem;
 }
@@ -56,11 +42,4 @@ p {
   font-size: 1.05rem;
   color: #EAEAEA;
   margin-bottom: 1.2rem;
-}
-
-/* ====== Optional visual tweak ====== */
-.record-img:hover {
-  box-shadow: 0 0 25px rgba(255, 200, 150, 0.3);
-  transform: scale(1.02);
-  transition: 0.3s ease;
 }
