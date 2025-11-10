@@ -1,0 +1,46 @@
+/* 页面基础样式 */
+body {
+  background-color: #E9EEF3;   /* 冷色浅蓝灰背景 */
+  color: #2F3A45;              /* 深蓝灰文字 */
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* 主体布局 */
+main {
+  max-width: 800px;
+  position: relative;
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #2F3A45;
+  margin-bottom: 1.5rem;
+}
+
+/* 副标题 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #2F3A45;
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+/* 正文 */
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #2F3A45;
+  margin-bottom: 1.2rem;
+}
