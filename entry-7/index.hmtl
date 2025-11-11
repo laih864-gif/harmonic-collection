@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Books & Paper - Entry 7</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Books & Paper</h1>
+
+    <h2>The Weight of Words</h2>
+    <p>Old books carry more than stories — they carry time. Their yellowed pages, the faint smell of ink and dust, and the soft crackle when you turn a page all remind us that reading used to be a slower act. You could feel the texture of the paper, see the marks of age, and know that others once touched the same pages before you.</p>
+
+    <h2>Traces of Time</h2>
+    <p>Every old book has a history. Some have underlined sentences, notes in the margins, or a pressed leaf between the pages. These traces make each copy unique — a quiet record of someone else’s thoughts and moments. Even worn corners or small stains become part of its identity, showing how the object has lived through time.</p>
+
+    <h2>Paper as Memory</h2>
+    <p>Paper absorbs more than ink; it keeps the atmosphere of the moment it was written or printed. Letters, receipts, notebooks — they all hold fragments of life. Unlike digital text, which feels weightless, paper changes as it ages. Its surface darkens, softens, and becomes more fragile — like memory itself.</p>
+
+    <h2>The Disappearing Texture</h2>
+    <p>Screens have replaced paper for most of our reading. Words are sharper, cleaner, endlessly scrollable — but they leave no mark, no smell, no warmth. There’s no pause when turning a page, no sound of paper moving, no weight in your hand. The convenience is undeniable, but something human gets lost in the exchange.</p>
+
+    <h2>Why It Matters</h2>
+    <p>Books and paper remind us that ideas don’t only exist in words — they live in texture, touch, and time. In holding them, we hold a fragment of the past. They teach us that slowness can be beautiful, and that even silence — the space between pages — can speak.</p>
+  </main>
+</body>
+</html>

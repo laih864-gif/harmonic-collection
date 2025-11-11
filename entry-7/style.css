@@ -1,0 +1,62 @@
+body {
+  background-color: #F6F0E4;   /* 柔和旧纸色 */
+  color: #3F2F27;              /* 深棕文字 */
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 800px;
+  position: relative;
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #3F2F27;
+  margin-bottom: 1.5rem;
+}
+
+/* 副标题 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3F2F27;
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+/* 正文 */
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #3F2F27;
+  margin-bottom: 1.2rem;
+}
+
+/* （可选）纸张质感叠加 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("grain1.png"); /* grain 图片 */
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  opacity: 0.1;       /* 轻一点 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
