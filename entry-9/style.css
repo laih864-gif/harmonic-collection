@@ -1,0 +1,52 @@
+/* base page */
+body {
+  background-color: #F4E3D3;      /* 暖陶土感米色 */
+  color: #3F2C26;                 /* 深棕文字 */
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 800px;
+  position: relative;
+}
+
+/* main title */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #3F2C26;
+  margin-bottom: 1.5rem;
+}
+
+iframe {
+  width: 600px;
+  height: 500px;
+  border: none;
+  margin: 20px 0;
+}
+
+/* subtitles */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3F2C26;
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+/* paragraphs */
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  color: #3F2C26;
+  margin-bottom: 1.2rem;
+}
