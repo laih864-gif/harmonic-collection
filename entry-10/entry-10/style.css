@@ -1,0 +1,169 @@
+/* ===== 全局 ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #F5F5F5;
+  background-color: #111111; /* 视频没覆盖的地方就是深灰黑 */
+}
+
+/* 让内容读起来清楚一点，盖在视频上 */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== 背景视频 ===== */
+.video-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #111111;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持比例，画面不裁剪，多余区域深灰色 */
+  background-color: #111111;
+}
+
+/* ===== Hero 区（主标题） ===== */
+
+.hero {
+  min-height: 100vh;               /* 占满一屏 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-title {
+  max-width: 80vw;
+  height: auto;
+  opacity: 0;
+  animation: fadeInTitle 2.2s ease-out forwards;
+}
+
+/* 渐显动画 */
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Intro 区 ===== */
+
+.intro-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  background: rgba(0, 0, 0, 0.65);  /* 盖一层半透明深色方便阅读 */
+  border-radius: 16px;
+}
+
+/* 副标题：用你之前 entry 的 H2 风格（Playfair） */
+.intro-section h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: #F5F5F5;
+}
+
+/* Intro 正文：用 Lato */
+.intro-section p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+  color: #E6E6E6;
+}
+
+/* ===== Entries 区 ===== */
+
+.entries-section {
+  max-width: 1000px;
+  margin: 3.5rem auto 4rem;
+  padding: 0 1.5rem 3rem;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 16px;
+}
+
+/* “Entries” 标题也用 Playfair */
+.entries-heading {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: #F5F5F5;
+}
+
+/* 3×3 网格 */
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+/* 每个 entry 文字当按钮用 */
+.entry-link {
+  text-decoration: none;
+  color: #F5F5F5;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 0.8rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.4);
+  transition: 
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+/* hover 微微发光效果 */
+.entry-link:hover {
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* ===== 小屏适配 ===== */
+
+@media (max-width: 768px) {
+  .entries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-title {
+    max-width: 90vw;
+  }
+
+  .intro-section,
+  .entries-section {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .entries-grid {
+    grid-template-columns: 1fr;
+  }
+}
