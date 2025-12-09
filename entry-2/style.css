@@ -1,13 +1,31 @@
 /* ====== Base Style ====== */
 body {
-  background-color: #1E1E24;      /* 深蓝灰背景 */
-  color: #EAEAEA;                /* 浅灰文字 */
+  background-color: #cfcffa;      /* 深蓝灰背景 */
+  color: #242d6d;                /* 浅灰文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
   margin: 0;
   padding: 2rem;
   display: flex;
   justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
+  background-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;  /* 保证内容在颗粒纹理之上 */
 }
 
 main {
