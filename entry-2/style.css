@@ -61,3 +61,79 @@ p {
   color: #EAEAEA;
   margin-bottom: 1.2rem;
 }
+/* ====== Vinyl record animation ====== */
+
+.record-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 1.5rem;
+}
+
+/* 黑胶本体 */
+.vinyl-record {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+
+  /* 深色同色系渐变，模拟唱片纹理 */
+  background: radial-gradient(circle at center,
+    #cfcffa 0%,         /* 中心一点点反光 */
+    #1b204d 18%,
+    #111537 55%,
+    #08091f 75%,
+    #050614 100%
+  );
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+
+  /* 默认慢速旋转 */
+  animation: spin-slow 12s linear infinite;
+}
+
+/* 中间标签 */
+.vinyl-record::before {
+  content: "";
+  position: absolute;
+  inset: 35%;
+  border-radius: 50%;
+  background: radial-gradient(circle at top,
+    #f5f5ff 0%,
+    #e1e1ff 40%,
+    #c0c0f2 100%
+  );
+}
+
+/* 中心小圆孔 */
+.vinyl-record::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #111;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 默认慢速旋转 */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Hover 时加速旋转 */
+@keyframes spin-fast {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.record-wrapper:hover .vinyl-record {
+  animation: spin-fast 4s linear infinite;
+  filter: brightness(1.15);
+  box-shadow: 
+    0 18px 35px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.25),
+    0 0 35px rgba(255, 255, 255, 0.15);
+}
+
