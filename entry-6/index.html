@@ -13,6 +13,17 @@
   <main>
     <h1>Polaroid Moments</h1>
 
+  <div class="polaroid-wrapper">
+   <div class="polaroid-frame">
+      <img 
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/30083611177529.560f3259bbeb3.jpg"
+        alt="Polaroid Photo"
+        class="polaroid-photo"
+      >
+   </div>
+  </div>
+
+
     <h2>Instant Magic</h2>
     <p>Polaroid cameras capture not just an image, but a moment becoming visible. When you press the shutter, there’s a small sound and then a short wait as the photo slowly appears. That waiting, even just a few seconds, feels meaningful — like the moment itself is unfolding in your hands.
 There’s a quiet joy in watching colors rise from blank white. It’s something between science and magic, a little unpredictable every time.</p>
@@ -32,5 +43,16 @@ This rhythm contrasts sharply with the instant pace of digital life. It’s not 
     <h2>Why It Matters</h2>
     <p>In a world where we take hundreds of photos without thinking, a single instant print feels special. It’s something you can hold, pin on a wall, or give to someone. It turns a quick snapshot into a small physical memory.</p>
   </main>
+
+  <script>
+  window.addEventListener('load', () => {
+    const photo = document.querySelector('.polaroid-photo');
+
+    setTimeout(() => {
+      photo.classList.add('developed');
+    }, 800);
+  });
+</script>
+
 </body>
 </html>

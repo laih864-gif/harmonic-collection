@@ -10,10 +10,25 @@ body {
   justify-content: center;
 }
 
+/* ✨纸感噪点背景（与 Entry 1–5 一致） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
+  background-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* 主体布局 */
 main {
   max-width: 800px;
   position: relative;
+  z-index: 1;
 }
 
 /* 主标题 */
@@ -43,4 +58,39 @@ p {
   font-size: 1.05rem;
   color: #2F3A45;
   margin-bottom: 1.2rem;
+}
+
+/* 拍立得整体居中 */
+.polaroid-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 2.5rem;
+}
+
+/* 拍立得边框 */
+.polaroid-frame {
+  background-color: #ffffff;
+  padding: 0.75rem 0.75rem 1.6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+/* 初始状态：未显影 */
+.polaroid-photo {
+  display: block;
+  width: 240px;
+  height: auto;
+  object-fit: cover;
+
+  opacity: 0;
+  filter: grayscale(1) brightness(2.2) blur(6px);
+  transition:
+    opacity 2.5s ease-out,
+    filter 3s ease-out;
+}
+
+/* 显影后状态 */
+.polaroid-photo.developed {
+  opacity: 1;
+  filter: grayscale(0) brightness(1) blur(0);
 }
