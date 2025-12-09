@@ -83,14 +83,27 @@ p {
   align-items: center;
 }
 
-/* Inner rotating part */
+/* 中间轴心 */
 .spool::before {
   content: "";
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #3c2f2f;
 }
+
+/* 外圈的三个“小孔”，用来让旋转可见 */
+.spool::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3c2f2f;
+  /* 左右各一个 + 上面一个，形成 3 个孔 */
+  box-shadow: 14px 0 0 #3c2f2f, -14px 0 0 #3c2f2f;
+}
+
 
 /* Rotation animation */
 @keyframes spin {
