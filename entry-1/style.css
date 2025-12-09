@@ -1,3 +1,59 @@
+body {
+  background-color: #F9F4E7;
+  color: #3C2F2F;
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* 纸感/颗粒纹理 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
+  background-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;     /* 内容在纹理之上 */
+  max-width: 800px;
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #3C2F2F;
+  margin-bottom: 1.5rem;
+}
+
+/* 小标题 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3C2F2F;
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+}
+
+/* 正文 */
 p {
-  color: blue;
+  font-size: 1.05rem;
+  color: #3C2F2F;
+  margin-bottom: 1.2rem;
+  text-align: left;
 }
