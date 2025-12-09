@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 240, 215);   /* 柔和奶粉色背景 */
+  background-color: rgb(182, 147, 147);   /* 柔和奶粉色背景 */
   color: #6c3824;              /* 暖灰棕文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
@@ -10,21 +10,23 @@ body {
   position: relative;
 }
 
-/* 背景粒子层（淡淡质感） */
+/* 纸感噪点背景，与其他 entries 一致 */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("grain1.png");
-  background-repeat: repeat;
-  background-size: 320px 320px;
-  opacity: 0.08;          /* 稀疏轻盈的颗粒感 */
+  inset: 0;
+
+  background-image:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+
+  background-size: 3px 3px, 4px 4px;
+  background-blend-mode: multiply;
+
   pointer-events: none;
   z-index: 0;
 }
+
 
 main {
   position: relative;
@@ -37,7 +39,7 @@ h1 {
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
-  color: #6c3824;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
@@ -48,7 +50,7 @@ h2 {
   font-style: italic;
   font-weight: 400;
   font-size: 1.6rem;
-  color: #6c3824;
+  color: #ffffff;
   margin: 2.5rem 0 1rem;
   text-align: center;
 }
@@ -56,7 +58,7 @@ h2 {
 p {
   font-family: "Lato", sans-serif;
   font-size: 1.05rem;
-  color: #6c3824;
+  color: #ffffff;
   margin-bottom: 1.2rem;
 }
 
@@ -69,4 +71,55 @@ p {
 iframe {
   border-radius: 12px;              /* 视频圆角 */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 轻微阴影 */
+}
+
+/* 毛线容器：居中对齐正文宽度 */
+.yarn-line-wrapper {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  position: relative;   /* 让毛线球可以在里面绝对定位 */
+}
+
+/* 毛线本体：从左到右慢慢画出来 */
+.yarn-line {
+  height: 4px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    135deg,
+    #fbe0d9 0px,
+    #fbe0d9 8px,
+    #f3c4b8 8px,
+    #f3c4b8 16px
+  );
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: yarn-draw 2.2s ease-out forwards;
+}
+
+@keyframes yarn-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* 毛线球：在右侧、连在线的末端，稍后弹出来 */
+.yarn-ball {
+  position: absolute;
+  right: -0.5rem;   /* 稍微超出一点，看起来是挂在末端 */
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  font-size: 1.8rem;
+  opacity: 0;
+  animation: yarn-ball-pop 0.6s ease-out 2.1s forwards; 
+  /* 2.1s 延迟 ≈ 等线画完再出现 */
+}
+
+@keyframes yarn-ball-pop {
+  from {
+    transform: translateY(-50%) scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
 }
