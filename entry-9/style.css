@@ -1,6 +1,6 @@
 /* base page */
 body {
-  background-color: #F4E3D3;      /* 暖陶土感米色 */
+  background-color: #704217;      /* 暖陶土感米色 */
   color: #3F2C26;                 /* 深棕文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
@@ -10,26 +10,32 @@ body {
   justify-content: center;
 }
 
+/* 背景噪点纹理 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("grain1.png");  /* 你的噪点图片 */
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.12;     /* 数值越小越淡，可调 0.05–0.2 */
+  pointer-events: none;
+  z-index: 0;
+}
+
 main {
   max-width: 800px;
   position: relative;
+  z-index: 1;
 }
 
-/* main title */
 h1 {
   font-family: "Abril Fatface", serif;
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
-  color: #3F2C26;
+  color: #fffef5;
   margin-bottom: 1.5rem;
-}
-
-iframe {
-  width: 600px;
-  height: 500px;
-  border: none;
-  margin: 20px 0;
 }
 
 /* subtitles */
@@ -38,15 +44,63 @@ h2 {
   font-style: italic;
   font-weight: 400;
   font-size: 1.6rem;
-  color: #3F2C26;
+  color: #fffef5;
   text-align: center;
   margin: 2.5rem 0 1rem;
+
+  position: relative;   /* 为了放伪元素 */
+  overflow: hidden;     /* 防止光泽溢出文字区域 */
 }
 
 /* paragraphs */
 p {
   font-family: "Lato", sans-serif;
   font-size: 1.05rem;
-  color: #3F2C26;
+  color: #fffef5;
   margin-bottom: 1.2rem;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.video-container iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 陶瓷上釉的光泽滑过动画：小标题 hover 时闪一下 */
+h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;      /* 一开始在左侧外面 */
+  width: 50%;
+  height: 100%;
+
+  /* 光泽：中间亮一点，两边透明 */
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);   /* 让光带稍微斜一点，更像反光 */
+  pointer-events: none;
+}
+
+/* hover 时触发光泽从左到右扫一次 */
+h2:hover::after {
+  animation: glaze-sweep 0.8s ease-out;
+}
+
+@keyframes glaze-sweep {
+  from {
+    left: -120%;
+  }
+  to {
+    left: 140%;
+  }
 }
