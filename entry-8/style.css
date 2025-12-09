@@ -1,0 +1,95 @@
+body {
+  background-color: #F3EADC;   /* 柔和纸张底色 */
+  color: #3F2F27;
+  font-family: "Lato", sans-serif;
+  line-height: 1.75;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 纸感噪点背景 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-blend-mode: multiply;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+main {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  color: #3F2F27;
+  margin-bottom: 1.5rem;
+}
+
+/* 小标题 */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3F2F27;
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+/* 正文 */
+p {
+  font-size: 1.05rem;
+  color: #3F2F27;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* 地图容器：和正文同宽 */
+.map-wrapper {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+/* 地图图片 */
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* 放大镜圆圈 */
+.magnifier {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200% 200%;
+
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: none; /* 默认隐藏 */
+}

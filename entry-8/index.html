@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Entry 8</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Maps & Old Atlases</h1>
+
+    <!-- 地图 + 放大镜效果 -->
+<div class="map-wrapper">
+  <img 
+    src="https://i.pinimg.com/originals/6f/8f/ba/6f8fba395711088da6df3f9e0fe3c75f.jpg"
+    alt="Map"
+    class="map-image"
+  >
+  <div class="magnifier"></div>
+</div>
+
+    <h2>A Different Way to See the World</h2>
+    <p>Before phones could guide every turn, people opened a paper map to understand where they were. Unfolding it was almost an introduction to the journey — a moment to pause before moving. You had to look, compare, think, and choose a direction. The process was slower, but it made the world feel bigger and more interesting.</p>
+
+    <h2>Where People Have Been</h2>
+    <p>Old maps often carry traces of their past users: a penciled route, a circled city, a coffee ring from a rest stop. These marks feel personal, even if you don’t know the person who made them. They show questions someone had, places they hoped to reach, and sometimes the mistakes they made along the way. Every map becomes a record of choices and detours, not just locations.</p>
+
+    <h2>Touching Distance</h2>
+    <p>With a paper map, distance has texture. You physically move your finger from one town to another, noticing all the space in between. Mountains look like ridges in the design, rivers curve across the page, and borders have shapes you can follow. It’s a slower way of understanding the world — not just seeing where things are, but feeling how they connect.</p>
+
+    <h2>Atlases That Hold History</h2>
+    <p>An atlas doesn’t just show geography; it shows time. Borders shift, cities grow, and sometimes entire countries disappear from future editions. Flipping through an old atlas feels like looking at a world in mid-change. You start to notice how people once described the places they lived in, and how our understanding of the world keeps evolving.</p>
+
+    <h2>The Quiet of Being a Little Lost</h2>
+    <p>Digital maps remove uncertainty, but paper maps leave room for your own judgment. Sometimes you misread a road or take a longer route — but those moments often become the memorable ones. Getting slightly lost can lead to a new café, a quiet viewpoint, or a conversation with a stranger. A paper map doesn’t correct you instantly; it lets you figure things out at your own pace.</p>
+
+    <h2>Why We Still Keep Them</h2>
+    <p>Even in a world of perfect navigation, paper maps still feel meaningful. They remind us that exploring doesn’t have to be efficient to be worthwhile. A map is something you can unfold, hold, and pass down — a physical record of where you’ve been and where you hope to go. It brings back the simple idea that the journey itself is part of the experience.</p>
+  </main>
+
+  <script>
+  window.addEventListener('load', () => {
+    const img = document.querySelector('.map-image');
+    const lens = document.querySelector('.magnifier');
+    const zoom = 2;  // 放大倍数，可改 1.5, 2.5, 3...
+
+    if (!img || !lens) return;
+
+    // 使用你的地图图作为背景
+    lens.style.backgroundImage = `url('${img.src}')`;
+
+    function updateBackgroundSize() {
+      const w = img.offsetWidth;
+      const h = img.offsetHeight;
+      lens.style.backgroundSize = `${w * zoom}px ${h * zoom}px`;
+    }
+
+    updateBackgroundSize();
+    window.addEventListener('resize', updateBackgroundSize);
+
+    function moveLens(e) {
+      const rect = img.getBoundingClientRect();
+      const lensRect = lens.getBoundingClientRect();
+
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+
+      if (x < 0) x = 0;
+      if (y < 0) y = 0;
+      if (x > rect.width) x = rect.width;
+      if (y > rect.height) y = rect.height;
+
+      lens.style.left = x + 'px';
+      lens.style.top = y + 'px';
+
+      const bgX = -(x * zoom - lensRect.width / 2);
+      const bgY = -(y * zoom - lensRect.height / 2);
+      lens.style.backgroundPosition = `${bgX}px ${bgY}px`;
+    }
+
+    img.addEventListener('mouseenter', () => {
+      lens.style.display = 'block';
+    });
+
+    img.addEventListener('mouseleave', () => {
+      lens.style.display = 'none';
+    });
+
+    img.addEventListener('mousemove', moveLens);
+  });
+</script>
+
+</body>
+</html>
