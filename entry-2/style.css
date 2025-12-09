@@ -1,6 +1,6 @@
 /* ====== Base Style ====== */
 body {
-  background-color: #d4d4ffde;      /* 深蓝灰背景 */
+  background-color: #e7e7ff;      /* 深蓝灰背景 */
   color: #242d6d;                /* 浅灰文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
@@ -90,7 +90,7 @@ p {
 
   /* 深色同色系渐变，模拟唱片纹理 */
   background: radial-gradient(circle at center,
-    #cfcffa 0%,         /* 中心一点点反光 */
+    #1d5dff 0%,         /* 中心一点点反光 */
     #1b204d 18%,
     #111537 55%,
     #08091f 75%,

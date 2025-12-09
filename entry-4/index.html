@@ -26,5 +26,22 @@
     <h2>Why It Still Matters</h2>
     <p>Letters remind us that connection can be slow, imperfect, and deeply human. Bringing back this practice — even once in a while — is like bringing warmth back into communication. It’s not about nostalgia, but about remembering that sometimes the most meaningful things take time.</p>
   </main>
+  <script>
+    const prompts = [
+      "Write a letter to your future self.",
+      "Write a postcard to a place you have never been.",
+      "Write a letter to someone you miss but can't contact anymore.",
+      "Write a note to your past self, one paragraph long.",
+      "Describe your day in the form of a letter to a stranger."
+    ];
+
+    const btn = document.getElementById('prompt-btn');
+    const text = document.getElementById('prompt-text');
+
+    btn.addEventListener('click', () => {
+      const random = prompts[Math.floor(Math.random() * prompts.length)];
+      text.textContent = random;
+    });
+  </script>
 </body>
 </html>

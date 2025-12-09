@@ -57,3 +57,33 @@ p {
   margin-bottom: 1.2rem;
   text-align: left;
 }
+
+.prompt-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* 按钮样式：像一小片信纸 */
+#prompt-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid #B58A63;
+  background-color: #FDF7EE;
+  color: #3C2F2F;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+#prompt-btn:hover {
+  background-color: #F2E1C9;
+  transform: translateY(-1px);
+}
+
+/* 显示提示文字 */
+#prompt-text {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 1rem;
+}
