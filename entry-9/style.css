@@ -1,6 +1,6 @@
 /* base page */
 body {
-  background-color: #704217;      /* 暖陶土感米色 */
+  background-color: #704217;      /* 暖陶土色深背景 */
   color: #3F2C26;                 /* 深棕文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
@@ -8,17 +8,18 @@ body {
   padding: 2rem;
   display: flex;
   justify-content: center;
+  position: relative;             /* 为 ::before 做准备 */
 }
 
-/* 背景噪点纹理 */
+/* 浅色噪点纹理：适合深色背景 */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("grain1.png");  /* 你的噪点图片 */
-  background-repeat: repeat;
-  background-size: 300px 300px;
-  opacity: 0.12;     /* 数值越小越淡，可调 0.05–0.2 */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 3px 3px, 4px 4px;
   pointer-events: none;
   z-index: 0;
 }
@@ -26,7 +27,7 @@ body::before {
 main {
   max-width: 800px;
   position: relative;
-  z-index: 1;
+  z-index: 1;                     /* 内容在噪点之上 */
 }
 
 h1 {
@@ -103,21 +104,4 @@ h2:hover::after {
   to {
     left: 140%;
   }
-}
-/* 浅色噪点纹理：适合深色背景 */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 3px 3px, 4px 4px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-main {
-  position: relative;
-  z-index: 1;
 }
