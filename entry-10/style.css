@@ -132,19 +132,19 @@ main {
 
 /* Hero 区 - 主标题 */
 .hero {
-  min-height: 65vh;
+  height: 100vh;  /* 填满整个屏幕高度 */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 0; /* 不要额外空白 */
 }
 
 .hero-title {
-  max-width: 45vw;
+  width: 42vw;       /* 你也可以用 38vw 或 45vw 调整大小 */
+  max-width: 720px;  /* 防止超大屏变得太夸张 */
   height: auto;
   opacity: 0;
   animation: fadeInTitle 2.5s ease-out forwards;
-  filter: drop-shadow(0 10px 30px rgba(232, 154, 111, 0.3));
 }
 
 @keyframes fadeInTitle {
