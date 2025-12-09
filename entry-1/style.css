@@ -101,3 +101,13 @@ p {
 .spinning {
   animation: spin 1.2s linear infinite;
 }
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;   /* 与上下段落保持距离 */
+}
+
+iframe {
+  border-radius: 12px;              /* 视频圆角 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 轻微阴影 */
+}
