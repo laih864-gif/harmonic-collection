@@ -132,7 +132,7 @@ main {
 
 /* Hero 区 - 主标题 */
 .hero {
-  min-height: 100vh;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +140,7 @@ main {
 }
 
 .hero-title {
-  max-width: 80vw;
+  max-width: 45vw;
   height: auto;
   opacity: 0;
   animation: fadeInTitle 2.5s ease-out forwards;
