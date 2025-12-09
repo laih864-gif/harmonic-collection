@@ -1,5 +1,7 @@
+/* ===== 页面整体 ===== */
+
 body {
-  background-color: #F6F0E4;   /* 柔和旧纸色 */
+  background-color: #ecf6e4;   /* 柔和旧纸色 */
   color: #3F2F27;              /* 深棕文字 */
   font-family: "Lato", sans-serif;
   line-height: 1.75;
@@ -7,14 +9,33 @@ body {
   padding: 2rem;
   display: flex;
   justify-content: center;
-}
-
-main {
-  max-width: 800px;
   position: relative;
 }
 
-/* 主标题 */
+/* 纸感噪点背景 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-blend-mode: multiply;
+  pointer-events: none;
+  opacity: 0.35;   /* 噪点浓度，可 0.2~0.5 调整 */
+  z-index: 0;
+}
+
+/* 内容容器 */
+main {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;      /* 保证内容在噪点之上 */
+}
+
+/* ===== 标题 ===== */
+
 h1 {
   font-family: "Abril Fatface", serif;
   font-weight: 400;
@@ -22,9 +43,43 @@ h1 {
   text-align: center;
   color: #3F2F27;
   margin-bottom: 1.5rem;
+
+  /* 渐显动画 */
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(2px);
+  animation: titleFadeIn 1.8s ease-out forwards;
 }
 
-/* 副标题 */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ===== 小标题 & 正文（滚动淡入基础状态） ===== */
+
+h2,
+p {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 进入视口后添加的类（由 JS 加上） */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 小标题样式 + 墨水下划线 */
 h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -33,30 +88,34 @@ h2 {
   color: #3F2F27;
   text-align: center;
   margin: 2.5rem 0 1rem;
+
+  position: relative;
 }
 
-/* 正文 */
+/* 下划线伪元素 */
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #c49a6c, #8e5b3b);
+  transition: width 0.35s ease-out;
+}
+
+/* hover 时墨水线展开 */
+h2:hover::after {
+  width: 60%;
+}
+
+/* 正文样式 */
 p {
   font-family: "Lato", sans-serif;
   font-size: 1.05rem;
   color: #3F2F27;
   margin-bottom: 1.2rem;
-}
-
-/* （可选）纸张质感叠加 */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("grain1.png"); /* grain 图片 */
-  background-repeat: repeat;
-  background-size: 320px 320px;
-  opacity: 0.1;       /* 轻一点 */
-  pointer-events: none;
-  z-index: 0;
-}
-
-main {
-  position: relative;
-  z-index: 1;
+  text-align: left;
 }

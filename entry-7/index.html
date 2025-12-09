@@ -29,5 +29,24 @@
     <h2>Why It Matters</h2>
     <p>Books and paper remind us that ideas don’t only exist in words — they live in texture, touch, and time. In holding them, we hold a fragment of the past. They teach us that slowness can be beautiful, and that even silence — the space between pages — can speak.</p>
   </main>
+
+  <script>
+  // 选中所有 h2 和 p
+  const elements = document.querySelectorAll('h2, p');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-visible');
+        // 看过一次就不再移除，保持已出现状态
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15   // 元素有 15% 进入视口就触发
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
