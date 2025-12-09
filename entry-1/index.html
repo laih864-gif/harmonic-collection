@@ -9,6 +9,11 @@
 </head>
 <body>
   <main>
+
+    <div class="cassette">
+    <div class="spool left"></div>
+    <div class="spool right"></div>
+   </div>
     <h1>Cassette Tapes</h1>
 
     <h2>The Charm of Imperfection</h2>
@@ -50,5 +55,24 @@
       intention, and slow listening. Sometimes, the things we have to wait for are the ones that stay with us the longest.
     </p>
   </main>
+  <script>
+  const left = document.querySelector('.spool.left');
+  const right = document.querySelector('.spool.right');
+  const title = document.querySelector('h1');
+
+  let playing = false;
+
+  title.addEventListener('click', () => {
+    playing = !playing;
+
+    if (playing) {
+      left.classList.add('spinning');
+      right.classList.add('spinning');
+    } else {
+      left.classList.remove('spinning');
+      right.classList.remove('spinning');
+    }
+  });
+</script>
 </body>
 </html>
